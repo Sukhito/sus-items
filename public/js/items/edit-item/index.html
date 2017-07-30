@@ -1,0 +1,71 @@
+<div class="col-xs-8 col-xs-offset-2">
+<div classs="row">
+    <button class="btn btn-success" type="button" ng-click="save()">Save</button>
+    <button class="btn btn-danger" type="button" ui-sref="item({itemId:item._id})">Cancel</button>
+</div>
+<div class="row">
+	<div>
+		<table class="table">
+			<tr>
+				<td>Name</td>
+				<td><input class="form-control" type="text" ng-model="item.name"></td>
+			</tr>
+			<tr>
+				<td>Isi</td>
+				<td><input class="form-control" type="text" ng-model="item.dimension"></td>
+			</tr>
+			<tr>
+				<td>Volume<button class="btn btn-success btn-xs" ng-click="addVolume(item.volume)" tabindex="-1"><i class="fa fa-plus" aria-hidden="true"></i>
+                </button></td>
+				<td>
+					<ul ui-sortable ng-model="item.volume" style="list-style-type: none;margin: 0;padding: 0;">
+  						<li ng-repeat="volume in item.volume">
+                    		<input type="number" ng-model="volume.qty">
+                    		<input type="text" ng-model="volume.unit">
+                    		
+                    		<button class="btn btn-danger btn-xs" 
+                    				ng-click="deleteVolume($index,item.volume)" 
+                    				tabindex="-1">
+                        		<i class="fa fa-trash-o" aria-hidden="true"></i>
+                        	</button>
+                        </li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Modal</td>
+				<td><input class="form-control" type="text" ng-model="item.modal"></td>
+			</tr>
+			<tr>
+				<td>Keterangan Modal</td>
+				<td><textarea class="form-control" rows="5" ng-model="item.ketmodal"></textarea></td>
+			</tr>
+			<tr>
+				<td>Harga<button class="btn btn-success btn-xs" ng-click="addPrice(item.prices)" tabindex="-1">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                </button></td>
+				<td>
+                	<ul  ui-sortable ng-model="item.prices" style="list-style-type: none;margin: 0;padding: 0;">
+                    	<li ng-repeat="price in item.prices">
+                    		<input type="number" ng-model="price.nominal">
+                    		<input type="text" ng-model="price.unit">
+                    		
+                    		<button class="btn btn-danger btn-xs" 
+                    				ng-click="deletePrice($index,item.prices)" 
+                    				tabindex="-1">
+                        		<i class="fa fa-trash-o" aria-hidden="true"></i>
+                        	</button>
+
+                        </li>
+                	</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>Keterangan Jual</td>
+				<td><textarea class="form-control" rows="5" ng-model="item.ketjual"></textarea></td>
+			</tr>
+		</table>	
+	</div>
+
+</div>
+</div>

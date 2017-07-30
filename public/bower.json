@@ -1,0 +1,29 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/Sukhito/sus-items",
+  "authors": [
+    "sukhito <sukhito.tanawal@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "animate.css": "^3.5.2",
+    "angular-ui-router": "^1.0.4",
+    "angular-bootstrap": "^2.5.0",
+    "jquery": "^3.2.1",
+    "ng-focus-if": "^1.0.7",
+    "angular-ui-sortable": "^0.17.1",
+    "jquery-ui": "^1.12.1"
+  }
+}

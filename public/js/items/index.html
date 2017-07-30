@@ -1,0 +1,23 @@
+<button class="btn btn-primary" ui-sref="nav">home</button>
+
+<input ng-model="search.name" focus-if>
+
+<button class="btn btn-success" ui-sref="item-new()">Tambah Barang</button>
+
+<table class="table table-hover table-nonfluid small">
+    <tr ng-repeat="item in items|filter:search|limitTo:30"  ui-sref="item({itemId:item._id})">
+        <td>{{item.name}}</td>
+        <td>{{item.dimension}}</td>
+        <td style="color:red">{{item.modal}}</td>
+        <td>
+            <ul style="list-style-type: none;margin: 0;padding: 0;">
+                <li ng-repeat="price in item.prices">
+                    {{price.nominal}}/{{price.unit}}
+                </li>
+            </ul>
+        </td>
+        <td>
+            {{item.ketjual}}
+        </td>
+    </tr>
+</table>
