@@ -20,6 +20,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 require('./app/routes/item')(app);
+require('./app/routes/delivery')(app);
 
 
 app.listen(port);
