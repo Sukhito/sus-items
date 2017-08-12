@@ -14,6 +14,9 @@ app.factory('ItemService',function($http){
         },
         getDeliveryItem : function(id){
             return $http.get('api/deliveries/items/' + id);
+        },
+        getDelivery : function(_id){
+            return $http.get('api/deliveries/' + _id);
         }
     }
 })

@@ -20,7 +20,7 @@
 						<span ng-repeat="volume in item.volume">
 							<span ng-if='$index!==0'> x </span>
 								{{volume.qty}} {{volume.unit}} 
-						<span>
+                        </span>
 					</td>
 				</tr>
 				<tr>
@@ -44,8 +44,7 @@
 								{{delivery.items[0].gross}} 
 								{{printCalc(delivery.items[0].calc)}} 
 								= <strong>{{delivery.items[0].net|number}}</strong>
-
-								<a ui-sref="delivery({deliveryId:delivery._id})"">({{delivery.date|date:'dd/MM/yy'}})</a>
+								<a ng-click="viewDelivery(delivery._id)">({{delivery.date|date:'dd/MM/yy'}})</a>
 							</li>
 						</ul>
 					</td>

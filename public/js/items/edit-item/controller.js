@@ -5,6 +5,10 @@ app.controller('ItemEditCtrl',function($scope,ItemService,$stateParams,$state){
         $scope.item = response.data;
     })
 
+    ItemService.getDeliveryItem($stateParams.itemId).then(function(response){
+		$scope.deliveries = response.data;
+	});
+    
 	$scope.save = function(){
         ItemService.updateItem($scope.item).then(function(response){
             if(response.data){

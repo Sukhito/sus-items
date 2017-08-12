@@ -40,6 +40,21 @@
 				<td>Keterangan Modal</td>
 				<td><textarea class="form-control" rows="5" ng-model="item.ketmodal"></textarea></td>
 			</tr>
+            <tr>
+                <td>Pokok</td>
+                <td>
+                    <ul style="list-style-type: none;margin: 0;padding: 0;">
+                        <li ng-repeat="delivery in deliveries|orderBy:'delivery.date':true">
+                            {{delivery.supplier[0].name}} :
+                            {{delivery.items[0].gross}} 
+                            {{printCalc(delivery.items[0].calc)}} 
+                            = <strong>{{delivery.items[0].net|number}}</strong>
+
+                            <a>({{delivery.date|date:'dd/MM/yy'}})</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
 			<tr>
 				<td>Harga<button class="btn btn-success btn-xs" ng-click="addPrice(item.prices)" tabindex="-1">
                 <i class="fa fa-plus" aria-hidden="true"></i>

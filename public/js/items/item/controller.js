@@ -1,4 +1,4 @@
-app.controller('ItemCtrl',function($scope,ItemService,$stateParams){
+app.controller('ItemCtrl',function($scope,ItemService,$stateParams,$uibModal){
     ItemService.getItem($stateParams.itemId).then(function(response){
         $scope.item = response.data;
     });
@@ -29,5 +29,29 @@ app.controller('ItemCtrl',function($scope,ItemService,$stateParams){
         }
 
         return toWrite;
+    }
+
+    
+    var viewDeliveryModal = function(deliveryId){
+        var modalInstance = $uibModal.open({
+            animation : true,
+            templateUrl : "js/items/item/view-delivery.html",
+            controller : function($scope, $uibModalInstance,deliveryId,ItemService){
+                ItemService.getDelivery(deliveryId).then(function(response){
+                    $scope.delivery = response.data;
+                })
+            },
+            size : "lg",
+            resolve:{
+                deliveryId : function(){
+                    return deliveryId;
+                }
+            }
+        });
+    }
+    
+        
+    $scope.viewDelivery = function(deliveryId){
+        viewDeliveryModal(deliveryId)
     }
 });

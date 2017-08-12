@@ -50,12 +50,18 @@ module.exports = function(app){
                     }
                 },
                 {
+                    $sort: {date : 1}
+                },
+                {
                     $lookup:{
                         from: "suppliers",
                         localField: "_supplier",
                         foreignField: "_id",
                         as: "supplier"
                     }
+                },
+                {
+                    $limit:5
                 }
             ])
             .exec(function (err, delivery) {

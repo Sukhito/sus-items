@@ -25,9 +25,6 @@ app.config(function($stateProvider,$urlRouterProvider,$locationProvider){
             templateUrl: 'js/items/new-item/index.html',
             controller: 'ItemNewCtrl'
         })
-
-
-
         .state("otherwise",{
             url: '',
             templateUrl: 'navigation.html'
