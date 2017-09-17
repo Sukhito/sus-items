@@ -39,7 +39,7 @@
 					<td>Pokok</td>
 					<td>
 						<ul style="list-style-type: none;margin: 0;padding: 0;">
-							<li ng-repeat="delivery in deliveries|orderBy:'delivery.date':true">
+							<li ng-repeat="delivery in deliveries">
 								{{delivery.supplier[0].name}} :
 								{{delivery.items[0].gross}} 
 								{{printCalc(delivery.items[0].calc)}} 
